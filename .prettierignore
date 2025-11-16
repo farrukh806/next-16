@@ -1,0 +1,17 @@
+node_modules
+.next
+dist
+build
+coverage
+public/events
+.turbo
+.output
+.vercel
+*.log
+*.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.cache
+/.husky
+/.git
