@@ -15,23 +15,23 @@ const Navbar = () => {
           />
           <p>DevEvent</p>
         </Link>
-        <ul>
-          <li className="list-none">
-            <Link href={'/'}>Home</Link>
-          </li>
-        </ul>
-        <ul>
-          <li className="list-none">
-            <Link href={'/events'}>Events</Link>
-          </li>
-        </ul>
-        <ul>
-          <li className="list-none">
-            <Link href={'/new-event'}>
-              New Event
-            </Link>
-          </li>
-        </ul>
+        <div className="flex flex-row gap-5">
+          <ul>
+            <li className="list-none">
+              <Link href={'/'}>Home</Link>
+            </li>
+          </ul>
+          <ul>
+            <li className="list-none">
+              <Link href={'/events'}>Events</Link>
+            </li>
+          </ul>
+          <ul>
+            <li className="list-none">
+              <Link href={'/new-event'}>New Event</Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   );

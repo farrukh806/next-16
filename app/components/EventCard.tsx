@@ -8,16 +8,14 @@ type EventCardProps = {
   date: string;
   location: string;
   time: string;
+  slug: string;
 };
 
-const EventCard: React.FC<EventCardProps> = (
-  props,
-) => {
-  const { image, title, date, location, time } =
-    props;
+const EventCard: React.FC<EventCardProps> = (props) => {
+  const { image, title, date, location, time, slug } = props;
   return (
     <Link
-      href={'/events'}
+      href={`/events/${slug}`}
       id="event-card"
       className="event-card list-none"
     >
@@ -29,10 +27,32 @@ const EventCard: React.FC<EventCardProps> = (
         className="poster"
       />
       <p className="title">{title}</p>
-      <p className="event-date">
-        {date} at {time}
-      </p>
-      <p className="event-location">{location}</p>
+      <div className="flex flex-row gap-2">
+        <Image
+          src={'/icons/pin.svg'}
+          alt="Location Icon"
+          width={12}
+          height={12}
+        />
+        <p className="event-location">{location}</p>
+      </div>
+      <div className="flex flex-row gap-4"></div>
+      <div className="flex flex-row gap-2">
+        <Image
+          src={'/icons/calendar.svg'}
+          alt="Calendar Icon"
+          width={12}
+          height={12}
+        />
+        <p className="event-date">{date}</p>
+        <Image
+          src={'/icons/clock.svg'}
+          alt="Clock Icon"
+          width={12}
+          height={12}
+        />
+        <p className="event-time">{time}</p>
+      </div>
     </Link>
   );
 };

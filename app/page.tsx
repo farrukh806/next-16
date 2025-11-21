@@ -6,12 +6,10 @@ export default function Home() {
   return (
     <section>
       <h1 className="text-center">
-        The Hub for Every DEV <br /> Event You
-        Can't Miss
+        The Hub for Every DEV <br /> Event You Can&apos;t Miss
       </h1>
       <p className="text-center mt-5">
-        Hackathons, Meetups and Conferences, All
-        in One Place
+        Hackathons, Meetups and Conferences, All in One Place
       </p>
 
       <ExploreBtn />
@@ -27,6 +25,7 @@ export default function Home() {
               image={event.image}
               title="Event"
               time={event.time}
+              slug={event.slug}
             />
           ))}
         </div>
