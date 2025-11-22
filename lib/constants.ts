@@ -108,3 +108,7 @@ export const EVENTS = [
     id: 12,
   },
 ];
+
+export const API_ENDPOINTS = {
+  EVENTS: '/api/events',
+};

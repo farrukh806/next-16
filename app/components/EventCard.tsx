@@ -1,3 +1,4 @@
+import { formatImageUrl } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -20,7 +21,7 @@ const EventCard: React.FC<EventCardProps> = (props) => {
       className="event-card list-none"
     >
       <Image
-        src={image}
+        src={formatImageUrl(image, { width: 410, height: 300 })}
         alt={title}
         width={410}
         height={300}

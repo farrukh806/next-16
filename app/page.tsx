@@ -1,8 +1,10 @@
 import ExploreBtn from './components/ExploreBtn';
 import EventCard from './components/EventCard';
-import { EVENTS } from '@/lib/constants';
+import { use } from 'react';
+import { EventService } from '@/service/event';
 
 export default function Home() {
+  const response = use(EventService.getAllEvents());
   return (
     <section>
       <h1 className="text-center">
@@ -17,13 +19,13 @@ export default function Home() {
       <div className="mt-20 space-y-7">
         <h3>Featured Events</h3>
         <div className="events">
-          {EVENTS.map((event) => (
+          {response.data.map((event) => (
             <EventCard
-              key={event.id}
+              key={event.slug}
               date={event.date}
-              location="Location 1"
+              location={event.location}
               image={event.image}
-              title="Event"
+              title={event.title}
               time={event.time}
               slug={event.slug}
             />
