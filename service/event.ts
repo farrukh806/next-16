@@ -2,9 +2,13 @@ import { IEvent } from '@/database/event.model';
 import { API_ENDPOINTS } from '@/lib/constants';
 import { FetchHelper } from '@/lib/fetch-helper';
 import { ApiResponse } from '@/types/api';
+import { cacheLife, cacheTag } from 'next/cache';
 
 export const EventService = {
   getAllEvents: async () => {
+    'use cache';
+    cacheTag('events');
+    cacheLife('hours');
     try {
       return await FetchHelper.get<ApiResponse<IEvent[]>>(
         API_ENDPOINTS.EVENTS,

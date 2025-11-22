@@ -59,7 +59,9 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary-foreground: var(
+    --sidebar-primary-foreground
+  );
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
@@ -113,6 +115,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-size: 14px;
   }
 
   main {
@@ -235,7 +238,7 @@
     }
 
     p {
-      @apply text-light-100 text-lg max-sm:text-sm;
+      @apply text-light-100 max-sm:text-sm;
     }
 
     .flex-col-gap-2 {

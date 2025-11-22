@@ -90,11 +90,8 @@ const EventDetailsPage = ({
         <aside className="booking">
           <div className="signup-card">
             <h2>Book Your Spot</h2>
-            <p className="text-sm">
-              Join {10} people who have already booked their spot!
-            </p>
             <p className="text-sm">Be the first to book your spot!</p>
-            <BookEvent />
+            <BookEvent eventId={event._id.toString()} slug={slug} />
           </div>
         </aside>
       </div>
