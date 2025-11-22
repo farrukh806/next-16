@@ -5,14 +5,31 @@ import { ApiResponse } from '@/types/api';
 
 export const EventService = {
   getAllEvents: async () => {
-    return FetchHelper.get<ApiResponse<IEvent[]>>(
-      API_ENDPOINTS.EVENTS,
-    );
+    try {
+      return await FetchHelper.get<ApiResponse<IEvent[]>>(
+        API_ENDPOINTS.EVENTS,
+      );
+    } catch (error) {
+      return { data: [], error };
+    }
   },
   createEvent: async (formData: FormData) => {
-    return FetchHelper.postFormData<IEvent>(
-      API_ENDPOINTS.EVENTS,
-      formData,
-    );
+    try {
+      return await FetchHelper.postFormData<IEvent>(
+        API_ENDPOINTS.EVENTS,
+        formData,
+      );
+    } catch (error) {
+      return { data: null, error };
+    }
+  },
+  getEventBySlug: async (slug: string) => {
+    try {
+      return await FetchHelper.get<ApiResponse<IEvent>>(
+        `${API_ENDPOINTS.EVENTS}/${slug}`,
+      );
+    } catch (error) {
+      return { data: null, error };
+    }
   },
 };

@@ -21,6 +21,9 @@ export async function POST(request: Request) {
           { message: 'Image is required' },
           { status: 400 },
         );
+
+      event.tags = JSON.parse(requestBody.get('tags') as string);
+      event.agenda = JSON.parse(requestBody.get('agenda') as string);
       const arrayBuffer = await image.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
 

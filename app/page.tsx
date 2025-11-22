@@ -20,15 +20,7 @@ export default function Home() {
         <h3>Featured Events</h3>
         <div className="events">
           {response.data.map((event) => (
-            <EventCard
-              key={event.slug}
-              date={event.date}
-              location={event.location}
-              image={event.image}
-              title={event.title}
-              time={event.time}
-              slug={event.slug}
-            />
+            <EventCard key={event.slug} {...event} />
           ))}
         </div>
       </div>

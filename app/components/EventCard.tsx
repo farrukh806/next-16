@@ -37,7 +37,6 @@ const EventCard: React.FC<EventCardProps> = (props) => {
         />
         <p className="event-location">{location}</p>
       </div>
-      <div className="flex flex-row gap-4"></div>
       <div className="flex flex-row gap-2">
         <Image
           src={'/icons/calendar.svg'}

@@ -33,7 +33,7 @@ const EventSchema = new Schema<IEvent>(
       trim: true,
       maxlength: 100,
     },
-    slug: { type: String, unique: true, lowercase: true, trim: true },
+    slug: { type: String, lowercase: true, trim: true },
     description: {
       type: String,
       required: true,
