@@ -218,9 +218,9 @@ dev-event/
 
    ```env
    MONGODB_URI=your_mongodb_connection_string
-   CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-   CLOUDINARY_API_KEY=your_cloudinary_api_key
-   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+   CLOUDINARY_URL=cloudinary://<api_key>:<api_secret>@<cloud_name>
+   API_BASE_URL=http://localhost:3000
+
    ```
 
 4. **Run the development server**
